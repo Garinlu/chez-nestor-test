@@ -10,3 +10,6 @@ By Lucas Garin
 
 ## Testing
 `npm test`
+
+## Production
+Site available on `https://cocky-raman-ba8225.netlify.app/`

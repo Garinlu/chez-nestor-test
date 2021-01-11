@@ -2,8 +2,8 @@
 By Lucas Garin
 
 ## Technologies
-Language: Javascript/Typescript
-Framework: ReactJs
+* Language: Javascript/Typescript
+* Framework: ReactJs
 
 ## Run
 `npm start`

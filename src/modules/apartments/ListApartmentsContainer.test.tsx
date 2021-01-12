@@ -2,6 +2,8 @@ import apiService from "../../services/api.service";
 import ListApartmentsContainer from "./ListApartmentsContainer";
 import {Apartment} from "../../models/apartment";
 import {render, screen} from '@testing-library/react';
+import {ThemeContext} from "styled-components";
+import React from "react";
 
 
 function beforeLoading(mocked: Apartment[]) {
@@ -9,7 +11,11 @@ function beforeLoading(mocked: Apartment[]) {
     apiService.getApartments = async () => {
         return mocked;
     };
-    render(<ListApartmentsContainer/>);
+    render(
+        <ThemeContext.Provider value={'light'}>
+            <ListApartmentsContainer/>
+        </ThemeContext.Provider>
+    );
 }
 
 describe('<ListApartmentsContainer/>', () => {

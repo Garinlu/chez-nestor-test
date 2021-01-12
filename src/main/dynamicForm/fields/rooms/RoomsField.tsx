@@ -5,6 +5,7 @@ import Button from "../../../button/Button";
 import DynamicForm from "../../DynamicForm";
 import {Room} from "../../../../models/room";
 import {defaultRoomFieldsValues, roomFields} from "../../../../librairy/forms/listFormConfig";
+import { P } from "../../../../librairy/styled/theme";
 
 const RoomsField: React.FC<{ fieldConfig: Field, change: any, value: any }> = ({fieldConfig, change, value}) => {
     const [rooms, setRooms] = useState<Room[]>(value);
@@ -20,7 +21,7 @@ const RoomsField: React.FC<{ fieldConfig: Field, change: any, value: any }> = ({
             {
                 rooms.map((room, index) => (
                     <div key={index}>
-                        <p>Room {index + 1}</p>
+                        <P>Room {index + 1}</P>
                         <DynamicForm fields={roomForm} changed={(values: any) => {
                             changed(values, index);
                         }}/>

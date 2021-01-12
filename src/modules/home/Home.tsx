@@ -1,9 +1,10 @@
 import React from "react";
+import { H1, P } from "../../librairy/styled/theme";
 
 const Home: React.FC<any> = () => {
     return (<div>
-            <h1>Home</h1>
-            <p>Welcome on my Chez Nestor test app. Created by Lucas Garin</p>
+            <H1>Home</H1>
+            <P>Welcome on my Chez Nestor test app. Created by Lucas Garin</P>
         </div>
     );
 }

@@ -2,12 +2,13 @@ import React from "react";
 import ListClientsContainer from "./ListClientsContainer";
 import Button from "../../main/button/Button";
 import {useNavigate} from "@reach/router";
+import { H1 } from "../../librairy/styled/theme";
 
 const Clients: React.FC<any> = () => {
     const navigate = useNavigate();
     return (
         <div>
-            <h1>Clients</h1>
+            <H1>Clients</H1>
             <Button label={'Add client'} callback={() => {
                 navigate('/add/client');
             }}/>

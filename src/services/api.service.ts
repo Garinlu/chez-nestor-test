@@ -11,7 +11,9 @@ class ApiService {
     }
 
     getApartment(id: string): Promise<Apartment | undefined> {
-        return httpService.get('/api/apartment/' + id);
+        return this.getApartments().then((apartments: Apartment[]) => {
+            return apartments.find(a => a.id === id);
+        });
     }
 
     addApartment(apartment: Apartment) {
@@ -19,10 +21,6 @@ class ApiService {
     }
 
     getRooms(): Promise<Room[]> {
-        return httpService.get('/api/room').then((res: { rooms: Room[] }) => res.rooms);
-    }
-
-    getRoom(roomId: string): Promise<Room[]> {
         return httpService.get('/api/room').then((res: { rooms: Room[] }) => res.rooms);
     }
 
@@ -34,20 +32,20 @@ class ApiService {
         return httpService.get('/api/client').then((res: { clients: Client[] }) => res.clients);
     }
 
-    getClient(id: string): Promise<Client | undefined> {
-        return httpService.get('/api/client/' + id);
+    getClient(id: string): Promise<Client> {
+        return httpService.get('/api/client/' + id).then((res: { client: Client }) => res.client);
     }
 
     addClient(client: Client) {
         return httpService.post('/api/client', client);
     }
 
-    getBookings() {
+    getBookings(): Promise<Booking[]> {
         return httpService.get('/api/booking').then((res: { bookings: Booking[] }) => res.bookings);
     }
 
-    getBooking(bookingId: string) {
-        return httpService.get('/api/booking/' + bookingId);
+    getBooking(bookingId: string): Promise<Booking> {
+        return httpService.get('/api/booking/' + bookingId).then((res: { booking: Booking }) => res.booking);
     }
 
     addBooking(booking: Booking) {

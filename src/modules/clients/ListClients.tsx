@@ -1,6 +1,6 @@
 import React from "react";
 import {Client} from "../../models/client";
-import {CardBody, CardFooter, ListCards} from "../../librairy/styled/theme";
+import {CardBody, CardFooter, ListCards, P} from "../../librairy/styled/theme";
 import CardContainer from "../../main/cardContainer/CardContainer";
 import clientImg from "../../librairy/img/client.svg";
 import {Link} from "@reach/router";
@@ -16,7 +16,7 @@ const ListClients: React.FC<{ clients: Client[] }> = ({clients}) => {
                                 <img src={clientImg} alt={'client'}/>
                             </CardBody>
                             <CardFooter>
-                                <p>{client.fullName}</p>
+                                <P>{client.fullName}</P>
                             </CardFooter>
                         </Link>
                     </CardContainer>

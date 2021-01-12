@@ -1,6 +1,6 @@
 import {Link} from "@reach/router";
 import React from "react";
-import {CardBody, CardFooter, ListCards, SmallText} from "../../librairy/styled/theme";
+import {CardBody, CardFooter, ListCards, P, SmallText} from "../../librairy/styled/theme";
 import CardContainer from "../../main/cardContainer/CardContainer";
 import {Apartment} from "../../models/apartment";
 import apartmentImg from "../../librairy/img/apartment.svg";
@@ -16,7 +16,7 @@ const ListApartments: React.FC<{ apartments: Apartment[] }> = ({apartments}) => 
                                 <img src={apartmentImg} alt={'room'}/>
                             </CardBody>
                             <CardFooter>
-                                <p>Apartment {apartment.name}</p>
+                                <P>Apartment {apartment.name}</P>
                                 <SmallText><b>Rooms:</b> {apartment.rooms?.length}</SmallText>
                             </CardFooter>
                         </Link>

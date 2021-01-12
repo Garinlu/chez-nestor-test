@@ -6,9 +6,7 @@ const NavLink: React.FC<any> = (props: any) => {
         <Link
             {...props}
             getProps={({isCurrent}) => ({
-                style: {
-                    color: isCurrent ? "darkGrey" : "black"
-                }
+                className: isCurrent ? 'active' : ''
             })}
         />
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import {Table, Td, Th, THead, Tr} from "../../librairy/styled/theme";
+import {Table, TBody, Td, Th, THead, Tr} from "../../librairy/styled/theme";
 import {Booking} from "../../models/booking";
 import {useNavigate} from "@reach/router";
 
@@ -19,7 +19,7 @@ const ListBookings: React.FC<{ bookings: Booking[] }> = ({bookings}) => {
                     <Th>Creation</Th>
                 </Tr>
             </THead>
-            <tbody>
+            <TBody>
             {
                 bookings.map((booking, ind) => (
                     <Tr key={ind} onClick={(e) => goBookingDetails(booking.id)} style={{cursor: 'pointer'}}>
@@ -29,7 +29,7 @@ const ListBookings: React.FC<{ bookings: Booking[] }> = ({bookings}) => {
                     </Tr>
                 ))
             }
-            </tbody>
+            </TBody>
         </Table>
     );
 }

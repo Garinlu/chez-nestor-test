@@ -1,5 +1,5 @@
 import React from "react";
-import {ListCards} from "../../../librairy/styled/theme";
+import {H2, ListCards, P} from "../../../librairy/styled/theme";
 import {Apartment} from "../../../models/apartment";
 import RoomCard from "../../../main/roomCard/RoomCard";
 import Button from "../../../main/button/Button";
@@ -9,9 +9,9 @@ const ApartmentDetails: React.FC<{ apartment: Apartment }> = ({apartment}) => {
     const navigate = useNavigate();
     return (
         <div>
-            <h2>Apartment {apartment.name}</h2>
-            <p>Number: {apartment.number}</p>
-            <p>{apartment.rooms?.length} room(s).</p>
+            <H2>Apartment {apartment.name}</H2>
+            <P>Number: {apartment.number}</P>
+            <P>{apartment.rooms?.length} room(s).</P>
             <Button label={'Add a room'} callback={() => {
                 navigate('/apartments/' + apartment.id + '/room')
             }}/>
